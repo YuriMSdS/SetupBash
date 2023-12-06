@@ -5,20 +5,20 @@ criar_usuario (){
     useradd -m -p ${openssl psswr -1 $password}
 }
 
-#Função para criar grupos de usuários!!!
+#Função para criar grupos de usuários
 criar_grupo{
     groupname=$1
     groupname $groupname
 }
 
-#Função para atribuir usuário a um grupo :D
+#Função para atribuir usuário a um grupo
 add_user_to_group() {
     username=$1
     groupname=$2
     usermod -aG $groupname $username
 }
 
-#Agora um exemplo do uso das funções ;)
+#Agora um exemplo do uso das funções
 create_user_with_permission (){
     directory=$1
     permissions=$2
@@ -26,5 +26,5 @@ create_user_with_permission (){
     chmod $permissions $directory
 }
 
-#Por fim, a conclusão :3
+#Por fim, a conclusão
 echo "Configuração concluída"
